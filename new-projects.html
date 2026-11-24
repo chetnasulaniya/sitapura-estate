@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New Projects | Sitapura Real Estate</title>
+<meta name="description" content="Upcoming and under-construction residential projects in Sitapura and Jaipur.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+<div class="phero"><div class="wrap">
+<div class="crumbs"><a href="index.html">Home</a> / New projects</div>
+<span class="eyebrow">New projects</span>
+<h1>Be first to see what is <em>being built.</em></h1>
+<p class="lead">Upcoming and under-construction projects from builders we trust, shared before the public launch.</p>
+</div></div>
+
+<section class="sec" style="padding-top:80px"><div class="wrap">
+<div class="head"><span class="eyebrow">Now launching</span><h2>Projects to <em>watch.</em></h2></div>
+<div class="row" id="proj"></div>
+</div></section>
+
+<section class="sec tint"><div class="wrap">
+<div class="split">
+<div style="display:flex;flex-direction:column;gap:24px">
+<span class="eyebrow">Why buy early</span>
+<h2>Early access, <em>better terms.</em></h2>
+<p class="lead">Buying at pre-launch or early stages usually means more choice of floors and facing, and builder payment plans that are not available later.</p>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div class="check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F26B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>First pick of units and floors</div>
+<div class="check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F26B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Early-bird pricing and payment plans</div>
+<div class="check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F26B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>RERA registration checked by us</div>
+<div class="check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F26B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Builder track record reviewed</div>
+</div>
+</div>
+<div class="panel" aria-hidden="true"><svg viewBox="0 0 600 520" preserveAspectRatio="xMidYMax slice"><g fill="none" stroke="#F26B1D" stroke-width="1.5" opacity=".6"><path d="M60 520V300c0-60 50-100 110-100s110 40 110 100v220"/><path d="M320 520V240c0-80 60-130 130-130s130 50 130 130v280"/></g></svg></div>
+</div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+<div class="head"><span class="eyebrow">How a project purchase works</span><h2>From enquiry to <em>allotment.</em></h2></div>
+<div class="tl">
+<div><span class="n">01</span><h3>Enquire</h3><p class="muted">Tell us the project and unit type you are interested in.</p></div>
+<div><span class="n">02</span><h3>Site visit</h3><p class="muted">Visit the site and sample flat with your advisor.</p></div>
+<div><span class="n">03</span><h3>Review</h3><p class="muted">We explain pricing, approvals and the payment schedule.</p></div>
+<div><span class="n">04</span><h3>Book</h3><p class="muted">Pay the booking amount and receive your allotment letter.</p></div>
+</div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+<div class="split" style="align-items:flex-start">
+<div class="head" style="margin:0"><span class="eyebrow">Get project details</span><h2>Tell us what you <em>want.</em></h2><p class="lead">Share your details and we will send brochures, floor plans and the current price sheet.</p></div>
+<form class="form" id="pform" novalidate>
+<div class="two"><label>Your name<input type="text" id="p-name" autocomplete="name" required></label><label>Phone<input type="tel" id="p-phone" autocomplete="tel" required></label></div>
+<label>Project of interest<select id="p-proj"></select></label>
+<button class="btn" type="submit" style="align-self:flex-start">Request details</button>
+<div class="ok" id="p-ok" hidden>Thank you. An advisor will contact you shortly.</div>
+</form>
+</div>
+</div></section>
+</main>
+
+<div id="site-footer"></div>
+<script src="data.js"></script>
+<script src="layout.js"></script>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var P=[
+['Sitapura Greens','Sitapura','Under construction','3 & 4 BHK','From ₹ 1.1 Cr','[Possession date]','#FFC08A,#F26B1D 60%,#8A2F0B'],
+['Orchard Villas','Sitapura','Pre-launch','4 BHK villas','From ₹ 3.8 Cr','[Possession date]','#FFD3A8,#FF8A00 60%,#9A4A00'],
+['Amber Row','Jagatpura','Newly launched','2 & 3 BHK','From ₹ 52 Lakh','[Possession date]','#FFB08A,#E8590C 60%,#7A2A08'],
+['Skyline Heights','Mansarovar','Ready soon','3 BHK','From ₹ 77 Lakh','[Possession date]','#FFE0B8,#F59E3B 60%,#9C5A12']
+];
+$('proj').innerHTML=P.map(function(p){return '<a class="card prop lift" href="#pform" data-p="'+p[0]+'"><div class="img" style="background:linear-gradient(160deg,'+p[6]+')">'+window.SK+'<span class="tag">'+p[2]+'</span></div><div class="body"><h3>'+p[0]+'</h3><div class="meta">'+p[1]+', Jaipur</div><div class="meta">'+p[3]+' &middot; Possession: '+p[5]+'</div><div class="price">'+p[4]+'</div></div></a>'}).join('');
+$('p-proj').innerHTML='<option value="">Any project</option>'+P.map(function(p){return '<option>'+p[0]+'</option>'}).join('');
+$('proj').addEventListener('click',function(e){var a=e.target.closest('[data-p]');if(a)$('p-proj').value=a.getAttribute('data-p')});
+$('pform').addEventListener('submit',function(e){e.preventDefault();$('p-ok').hidden=false});
+})();
+</script>
+</body>
+</html>
